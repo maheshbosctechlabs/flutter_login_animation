@@ -1,1 +1,1 @@
-Lofin animation created in Flutter.
+Login animation created in Flutter.
