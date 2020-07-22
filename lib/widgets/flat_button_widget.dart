@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logindesign/color_constants.dart';
 
 class FlatButtonWidget extends StatelessWidget {
   final String btnTxt;
@@ -36,7 +37,7 @@ class FlatButtonWidget extends StatelessWidget {
                 style: Theme.of(context).textTheme.caption.copyWith(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
-                      color: Color(0XFF22419A),
+                      color: primaryColor,
                     ),
               ),
             ],

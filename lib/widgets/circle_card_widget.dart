@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:logindesign/color_constants.dart';
 
 class CircleCardWidget extends StatefulWidget {
   final String iconImg;
@@ -94,7 +95,7 @@ class _CircleCardWidgetState extends State<CircleCardWidget>
               widget.nameTxt,
               style: Theme.of(context).textTheme.caption.copyWith(
                     fontSize: 12,
-                    color: Color(0XFF22419A),
+                    color: primaryColor,
                   ),
             ),
           )

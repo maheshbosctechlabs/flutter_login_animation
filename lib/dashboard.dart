@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:logindesign/color_constants.dart';
 import 'package:logindesign/widgets/circle_card_widget.dart';
 import 'package:logindesign/widgets/logo_widget.dart';
 
@@ -30,8 +31,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           child: LogoWidget(
             logoTxt: "LOGO",
             fontSize: 30,
-            myHeight: 30,
-            myWidth: 30,
+            height: 30,
+            width: 30,
           ),
         ),
         leading: GestureDetector(
@@ -39,7 +40,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           child: Icon(
             Icons.menu,
             size: 30,
-            color: Color(0XFF22419A),
+            color: primaryColor,
           ),
         ),
         actions: <Widget>[

@@ -1,18 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:logindesign/color_constants.dart';
 
 class LogoWidget extends StatelessWidget {
   final String logoTxt;
   final double fontSize;
-  final double myHeight;
-  final double myWidth;
+  final double height;
+  final double width;
   LogoWidget({
     Key key,
     @required this.logoTxt,
     @required this.fontSize,
-    @required this.myHeight,
-    @required this.myWidth,
+    @required this.height,
+    @required this.width,
   }) : super(key: key);
 
   @override
@@ -24,7 +25,7 @@ class LogoWidget extends StatelessWidget {
           logoTxt,
           style: Theme.of(context).textTheme.caption.copyWith(
                 fontSize: fontSize,
-                color: Color(0XFF22419A),
+                color: primaryColor,
                 fontWeight: FontWeight.w800,
               ),
         ),
@@ -32,19 +33,20 @@ class LogoWidget extends StatelessWidget {
           width: 10,
         ),
         Transform.rotate(
-            angle: pi / 4,
-            child: Container(
-              height: myHeight,
-              width: myWidth,
-              color: Color(0XFF22419A),
-              child: Center(
-                child: Container(
-                  height: 15,
-                  width: 15,
-                  color: Colors.white,
-                ),
+          angle: pi / 4,
+          child: Container(
+            height: height,
+            width: width,
+            color: primaryColor,
+            child: Center(
+              child: Container(
+                height: 15,
+                width: 15,
+                color: Colors.white,
               ),
-            )),
+            ),
+          ),
+        ),
       ],
     );
   }

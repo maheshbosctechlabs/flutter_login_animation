@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TextFormFieldWidget extends StatefulWidget {
+class TextFormFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final IconData leadingIcon;
   final FocusNode focusNode;
   final IconData suffixIcon;
+  final bool obscureText;
 
   TextFormFieldWidget({
     Key key,
@@ -12,28 +13,16 @@ class TextFormFieldWidget extends StatefulWidget {
     @required this.leadingIcon,
     @required this.focusNode,
     this.suffixIcon,
+    this.obscureText = false,
   }) : super(key: key);
-
-  @override
-  _TextFormFieldWidgetState createState() => _TextFormFieldWidgetState();
-}
-
-class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
-  @override
-  void initState() {
-    widget.focusNode.addListener(() {
-      setState(() {});
-    });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: widget.focusNode,
+      animation: focusNode,
       builder: (context, child) {
         return Transform.scale(
-          scale: widget.focusNode.hasFocus ? 1.1 : 1,
+          scale: focusNode.hasFocus ? 1.1 : 1,
           child: child,
         );
       },
@@ -44,25 +33,21 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         elevation: 5,
         child: TextFormField(
           textAlign: TextAlign.start,
-          style: Theme.of(context).textTheme.caption.copyWith(
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-                color: Color(0xFF31877A),
-              ),
-          controller: widget.controller,
-          focusNode: widget.focusNode,
+          controller: controller,
+          focusNode: focusNode,
           decoration: InputDecoration(
             prefixIcon: Icon(
-              widget.leadingIcon,
+              leadingIcon,
               color: Colors.grey,
             ),
             suffixIcon: Icon(
-              widget.suffixIcon,
+              suffixIcon,
+              color: Colors.grey,
             ),
             contentPadding: EdgeInsets.all(15.0),
             border: InputBorder.none,
-            focusColor: Colors.green,
           ),
+          obscureText: obscureText,
         ),
       ),
     );

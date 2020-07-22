@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
-import 'package:logindesign/dashBoard_Screen.dart';
+import 'package:logindesign/color_constants.dart';
+import 'package:logindesign/dashboard.dart';
 import 'package:logindesign/widgets/flat_button_widget.dart';
 import 'package:logindesign/widgets/logo_widget.dart';
 
@@ -91,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen>
                   },
                   child: CustomPaint(
                     painter: DrawTriangle(
-                      Color(0XFF22419A),
+                      primaryColor,
                     ),
                   ),
                 ),
@@ -135,8 +136,8 @@ class _LoginScreenState extends State<LoginScreen>
                             child: LogoWidget(
                               logoTxt: "LOGO",
                               fontSize: 40,
-                              myHeight: 40,
-                              myWidth: 40,
+                              height: 40,
+                              width: 40,
                             ),
                           ),
                         ),
@@ -154,6 +155,7 @@ class _LoginScreenState extends State<LoginScreen>
                               focusNode: _passwordfocusNode,
                               leadingIcon: Icons.lock_outline,
                               suffixIcon: Icons.info_outline,
+                              obscureText: true,
                             ),
                             SizedBox(
                               height: 50,
@@ -207,7 +209,7 @@ class _LoginScreenState extends State<LoginScreen>
           Icon(
             Icons.crop_square,
             size: 20,
-            color: Color(0XFF22419A),
+            color: primaryColor,
           ),
           Icon(
             Icons.email,
